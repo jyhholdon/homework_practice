@@ -43,3 +43,6 @@ dist/enroll-conflict_1.0.0_linux_amd64/enroll-conflict -version
 | `LAB1.md` | 小组的证据与分析记录，需要填写并提交 |
 
 仓库中没有 `.github/workflows/`：流水线由小组在实验中自行编写。
+## CI 与发布
+
+PR 和 main 分支推送会运行 `ci`。推送 `vX.Y.Z` 标签会触发 `release`，发布制品和 SHA-256 校验和。
