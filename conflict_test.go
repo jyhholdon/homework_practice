@@ -19,6 +19,7 @@ func TestConflicts(t *testing.T) {
 		{"单周对每周冲突", mon(1, 2, OddWeeks), mon(1, 2, AllWeeks), true},
 		{"单周对单周冲突", mon(1, 2, OddWeeks), mon(2, 3, OddWeeks), true},
 		{"双周对每周冲突", mon(5, 6, EvenWeeks), mon(5, 6, AllWeeks), true},
+		{"单双周节次重叠仍不冲突", mon(1, 3, OddWeeks), mon(2, 4, EvenWeeks), false},
 	}
 	for _, c := range cases {
 		t.Run(c.name, func(t *testing.T) {
